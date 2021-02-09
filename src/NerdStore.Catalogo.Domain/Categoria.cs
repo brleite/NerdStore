@@ -11,6 +11,7 @@ namespace NerdStore.Catalogo.Domain
         // EF Relation
         public ICollection<Produto> Produtos { get; set; }
 
+        // Necessário por conta do Entity Framework. É preciso ter um construtor sem parâmetros. Nesse caso, criamos um protected.
         protected Categoria() { }
 
         public Categoria(string nome, int codigo)

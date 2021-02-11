@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using NerdStore.Core;
 using NerdStore.Core.Communication.Mediator;
 using NerdStore.Core.Messages.CommonMessages.Notifications;
 

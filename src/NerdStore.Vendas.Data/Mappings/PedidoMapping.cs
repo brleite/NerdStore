@@ -10,8 +10,13 @@ namespace NerdStore.Catalogo.Data.Mappings
         {
             builder.HasKey(c => c.Id);
 
+            //builder.Property(c => c.Codigo)
+            //    .HasDefaultValueSql("nextval('minhasequencia')");
+            builder.HasIndex(c => c.Codigo)
+                   .IsUnique();
+
             builder.Property(c => c.Codigo)
-                .HasDefaultValueSql("nextval('minhasequencia')");
+                .ValueGeneratedOnAdd();
 
             // 1 : N => Pedido : PedidoItems
             builder.HasMany(c => c.PedidoItems)

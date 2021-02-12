@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using NerdStore.Catalogo.Domain;
 using NerdStore.Core.Data;
+using NerdStore.Core.Messages;
 
 namespace NerdStore.Catalogo.Data
 {
@@ -21,7 +22,7 @@ namespace NerdStore.Catalogo.Data
                 e => e.GetProperties().Where(p => p.ClrType == typeof(string))))
                 property.Relational().ColumnType = "varchar(100)";
 
-            // modelBuilder.Ignore<Event>();
+            modelBuilder.Ignore<Event>();
 
             // Registra todos os mappings declarados em CatalogoContext (DbSet<Produto> e DbSet<Categoria>)
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CatalogoContext).Assembly);

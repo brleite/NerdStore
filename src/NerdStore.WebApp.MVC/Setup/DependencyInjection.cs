@@ -13,7 +13,7 @@ using NerdStore.Core.Messages.CommonMessages.IntegrationEvents;
 using NerdStore.Core.Messages.CommonMessages.Notifications;
 using NerdStore.Pagamentos.AntiCorruption;
 using NerdStore.Pagamentos.Business;
-//using NerdStore.Pagamentos.Business.Events;
+using NerdStore.Pagamentos.Business.Events;
 using NerdStore.Pagamentos.Data;
 using NerdStore.Pagamentos.Data.Repository;
 using NerdStore.Vendas.Application.Commands;
@@ -77,7 +77,7 @@ namespace NerdStore.WebApp.MVC.Setup
             services.AddScoped<IConfigurationManager, ConfigurationManager>();
             services.AddScoped<PagamentoContext>();
 
-            //services.AddScoped<INotificationHandler<PedidoEstoqueConfirmadoEvent>, PagamentoEventHandler>();
+            services.AddScoped<INotificationHandler<PedidoEstoqueConfirmadoEvent>, PagamentoEventHandler>();
         }
     }
 }
